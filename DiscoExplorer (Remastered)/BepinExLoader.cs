@@ -61,6 +61,7 @@ namespace DiscoExplorer
                 RunSpeed.ApplyPatches();
                 FastTravelPatches.ApplyPatches();
                 FreezeClothingPatches.ApplyPatches();
+                ChecksPassFail.ApplyPatches();
 
                 log.LogMessage("[DiscoExplorer] Applied All Patches");
 

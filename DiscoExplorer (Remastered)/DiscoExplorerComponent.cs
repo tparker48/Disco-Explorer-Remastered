@@ -56,12 +56,14 @@ namespace DiscoExplorer
                 // 
                 // FastTravel.GoTo(FastTravel.whirling);
 
-                FreezeClothing.on = !FreezeClothing.on;
+                // FreezeClothing.on = !FreezeClothing.on;
+                // 
+                // if (!FreezeClothing.on)
+                // {
+                //     FreezeClothing.UpdateClothing();
+                // }
 
-                if (!FreezeClothing.on)
-                {
-                    FreezeClothing.UpdateClothing();
-                }
+                ChecksPassFail.Toggle();
 
                 Event.current.Use();
             }

@@ -19,7 +19,6 @@ namespace DiscoExplorer
             FreezeClothing.Init();
         }
         
-        //[HarmonyPatch(new Type[] { typeof(string), typeof(bool) })]
         static bool EquipAndBlend(string itemName)
         {
             BepInExLoader.log.LogMessage("Equipping " + itemName);
