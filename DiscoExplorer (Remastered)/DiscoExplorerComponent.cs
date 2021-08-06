@@ -21,7 +21,6 @@ namespace DiscoExplorer
             BepInExLoader.log.LogMessage("[DiscoExplorer] Entered Constructor");
         }
 
-        // Harmony Patch's must be static!
         [HarmonyPostfix]
         public static void Awake()
         {
@@ -37,16 +36,14 @@ namespace DiscoExplorer
         [HarmonyPostfix]
         public static void Update()
         {
-            // BepInExLoader.log.LogMessage("[DiscoExplorer] I'm Updating, disable this message after testing.");
-
             // Note the difference for getting keypress.
             if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.Backslash) && Event.current.type == EventType.KeyDown)
             {
                 BepInExLoader.log.LogMessage("[DiscoExplorer] Backslash detected!");
                 toggle = !toggle;
+    
+                // Tests
 
-
-                // Utilities Tests
                 Utilities.SetSkillPoints(99);
                 Utilities.SetMoney(777);
                 Utilities.AddAllClothes();
@@ -57,17 +54,10 @@ namespace DiscoExplorer
                 if (toggle) RunSpeed.SetRunSpeed(3f);
                 else RunSpeed.SetRunSpeed(1f);
 
+                FastTravel.GoTo(FastTravel.whirling);
+
                 Event.current.Use();
             }
-
-            
         }
-
-        /* --------- PATCH TEMPLATE -----------
-        [HarmonyPostfix]
-        public static void method()
-        {
-        }
-         */
     }
 }

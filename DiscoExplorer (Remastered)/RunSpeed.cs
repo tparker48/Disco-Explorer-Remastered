@@ -15,11 +15,19 @@ namespace DiscoExplorer
             }
         }
 
-        // PATCHES
-        [HarmonyPostfix]
         public static void get_deltaPosition(ref Vector3 __result)
         {
             __result *= speed;
+        }
+
+        public static void ApplyPatches()
+        {
+            var harmony = new Harmony("tparker48.DiscoElysium.il2cpp");
+            var originalSpeed = AccessTools.Method(typeof(Animator), "get_deltaPosition");
+            var postSpeed = AccessTools.Method(typeof(RunSpeed), "get_deltaPosition");
+            harmony.Patch(originalSpeed, postfix: new HarmonyMethod(postSpeed));
+
+            BepInExLoader.log.LogMessage("[DiscoExplorer] Run Speed Patches Applied");
         }
     }
 }
