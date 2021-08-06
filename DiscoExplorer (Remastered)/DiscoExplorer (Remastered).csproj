@@ -113,6 +113,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>python "C:\Users\Tom\source\repos\DiscoExplorer (Remastered)\move.py"</PostBuildEvent>
+    <PostBuildEvent>python C:\Users\Tom\Desktop\Disco-Explorer-Remastered\move.py</PostBuildEvent>
   </PropertyGroup>
 </Project>
