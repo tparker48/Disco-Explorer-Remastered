@@ -41,20 +41,27 @@ namespace DiscoExplorer
             {
                 BepInExLoader.log.LogMessage("[DiscoExplorer] Backslash detected!");
                 toggle = !toggle;
-    
+
                 // Tests
 
-                Utilities.SetSkillPoints(99);
-                Utilities.SetMoney(777);
-                Utilities.AddAllClothes();
-                Utilities.AddAllThoughts();
-                Utilities.ToggleHud();
-                Utilities.FinishAllThoughts();
-                Utilities.UnlockAllWhiteChecks();
-                if (toggle) RunSpeed.SetRunSpeed(3f);
-                else RunSpeed.SetRunSpeed(1f);
+                // Utilities.SetSkillPoints(99);
+                // Utilities.SetMoney(777);
+                // Utilities.AddAllClothes();
+                // Utilities.AddAllThoughts();
+                // Utilities.ToggleHud();
+                // Utilities.FinishAllThoughts();
+                // Utilities.UnlockAllWhiteChecks();
+                // if (toggle) RunSpeed.SetRunSpeed(3f);
+                // else RunSpeed.SetRunSpeed(1f);
+                // 
+                // FastTravel.GoTo(FastTravel.whirling);
 
-                FastTravel.GoTo(FastTravel.whirling);
+                FreezeClothing.on = !FreezeClothing.on;
+
+                if (!FreezeClothing.on)
+                {
+                    FreezeClothing.UpdateClothing();
+                }
 
                 Event.current.Use();
             }

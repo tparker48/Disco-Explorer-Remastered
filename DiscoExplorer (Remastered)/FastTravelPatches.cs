@@ -1,7 +1,4 @@
-﻿using BepInEx;
-using UnhollowerRuntimeLib;
-using HarmonyLib;
-using UnityEngine;
+﻿using HarmonyLib;
 
 namespace DiscoExplorer
 {
