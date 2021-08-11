@@ -43,6 +43,10 @@
     <Reference Include="BepInEx.IL2CPP">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\core\BepInEx.IL2CPP.dll</HintPath>
     </Reference>
+    <Reference Include="DialogueSystem, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\DialogueSystem.dll</HintPath>
+    </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
     </Reference>
@@ -55,6 +59,10 @@
     <Reference Include="Il2CppSystem.Xml">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\Il2CppSystem.Xml.dll</HintPath>
     </Reference>
+    <Reference Include="InControl, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\InControl.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\core\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -66,6 +74,10 @@
     </Reference>
     <Reference Include="Mono.Cecil.Rocks">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="PixelCrushers, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\PixelCrushers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -107,6 +119,7 @@
   <ItemGroup>
     <Compile Include="BepinExLoader.cs" />
     <Compile Include="ChecksPassFail.cs" />
+    <Compile Include="DrawGUI.cs" />
     <Compile Include="FastTravel.cs" />
     <Compile Include="FastTravelPatches.cs" />
     <Compile Include="FreezeClothing.cs" />

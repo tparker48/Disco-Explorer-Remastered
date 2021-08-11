@@ -14,7 +14,7 @@ namespace DiscoExplorer
 {
     public class DiscoExplorerComponent : MonoBehaviour
     {
-        static bool toggle = false;
+        public static bool toggle = false;
 
         public DiscoExplorerComponent(IntPtr ptr) : base(ptr)
         {
@@ -36,10 +36,10 @@ namespace DiscoExplorer
         [HarmonyPostfix]
         public static void Update()
         {
-            // Note the difference for getting keypress.
-            if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.Backslash) && Event.current.type == EventType.KeyDown)
+            // CTRL
+            if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.X) && Event.current.type == EventType.KeyDown)
             {
-                BepInExLoader.log.LogMessage("[DiscoExplorer] Backslash detected!");
+                BepInExLoader.log.LogMessage("[DiscoExplorer] Keypress detected!");
                 toggle = !toggle;
 
                 // Tests
@@ -63,10 +63,24 @@ namespace DiscoExplorer
                 //     FreezeClothing.UpdateClothing();
                 // }
 
+                if (Sunshine.Views.ViewController.Current != Sunshine.Views.ViewType.INVENTORY)
+                { 
+                    Sunshine.Views.ViewController.ToggleView(Sunshine.Views.ViewType.INVENTORY, false);
+                }
                 ChecksPassFail.Toggle();
-
                 Event.current.Use();
             }
         }
+
+        [HarmonyPostfix]
+        public static void OnGUI()
+        {
+            if (toggle)
+            {
+                DrawGUI.Draw();
+            }
+        }
     }
+
+        
 }
