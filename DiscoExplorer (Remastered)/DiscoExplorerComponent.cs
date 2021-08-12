@@ -36,38 +36,16 @@ namespace DiscoExplorer
         [HarmonyPostfix]
         public static void Update()
         {
-            // CTRL
+            // X
             if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.X) && Event.current.type == EventType.KeyDown)
             {
-                BepInExLoader.log.LogMessage("[DiscoExplorer] Keypress detected!");
                 toggle = !toggle;
-
-                // Tests
-
-                // Utilities.SetSkillPoints(99);
-                // Utilities.SetMoney(777);
-                // Utilities.AddAllClothes();
-                // Utilities.AddAllThoughts();
-                // Utilities.ToggleHud();
-                // Utilities.FinishAllThoughts();
-                // Utilities.UnlockAllWhiteChecks();
-                // if (toggle) RunSpeed.SetRunSpeed(3f);
-                // else RunSpeed.SetRunSpeed(1f);
-                // 
-                // FastTravel.GoTo(FastTravel.whirling);
-
-                // FreezeClothing.on = !FreezeClothing.on;
-                // 
-                // if (!FreezeClothing.on)
-                // {
-                //     FreezeClothing.UpdateClothing();
-                // }
 
                 if (Sunshine.Views.ViewController.Current != Sunshine.Views.ViewType.INVENTORY)
                 { 
                     Sunshine.Views.ViewController.ToggleView(Sunshine.Views.ViewType.INVENTORY, false);
                 }
-                ChecksPassFail.Toggle();
+
                 Event.current.Use();
             }
         }
