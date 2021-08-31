@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using BepInEx;
-using UnhollowerBaseLib;
-using UnhollowerRuntimeLib;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using Object = UnityEngine.Object;
 using Input = BepInEx.IL2CPP.UnityEngine.Input;
 
 namespace DiscoExplorer
@@ -71,7 +64,5 @@ namespace DiscoExplorer
                 DrawGUI.Draw();
             }
         }
-    }
-
-        
+    } 
 }

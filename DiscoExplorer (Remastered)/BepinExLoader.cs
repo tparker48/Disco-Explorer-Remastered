@@ -2,8 +2,6 @@
 using UnhollowerRuntimeLib;
 using HarmonyLib;
 using UnityEngine;
-using BepInEx.Configuration;
-using System.IO;
 using Object = UnityEngine.Object;
 
 namespace DiscoExplorer
@@ -22,7 +20,6 @@ namespace DiscoExplorer
         public BepInExLoader()
         {
             log = Log;
-            Config_Init();
         }
 
         public override void Load()
@@ -71,42 +68,11 @@ namespace DiscoExplorer
                 ChecksPassFail.ApplyPatches();
 
                 log.LogMessage("[DiscoExplorer] Applied All Patches");
-
-                /* ---------- PATCH TEMPLATE ---------
-                // [NAME]
-                var original[NAME] = AccessTools.Method(typeof([CLASS]), "[METHOD]");
-                log.LogMessage("[DiscoExplorer] Harmony - Original Method: " + original[NAME].DeclaringType.Name + "." + original[NAME].Name);
-                var post[NAME] = AccessTools.Method(typeof(DiscoExplorerComponent), "[METHOD]");
-                log.LogMessage("[DiscoExplorer] Harmony - Postfix Method: " + post[NAME].DeclaringType.Name + "." + post[NAME].Name);
-                harmony.Patch(original[NAME], postfix: new HarmonyMethod(post[NAME]));
-                log.LogMessage("[DiscoExplorer] Harmony - Runtime Patch's Applied");
-                 */
-
             }
             catch
             {
                 log.LogError("[DiscoExplorer] FAILED to Apply Patches!");
             }
-        }
-    
-        public void Config_Init()
-        {
-            // Create a new configuration file.
-            // First argument is the path to where the configuration is saved
-            // Second arguments specifes whether to create the file right away or whether to wait until any values are accessed/written
-            var customFile = new ConfigFile(Path.Combine(Paths.ConfigPath, "custom_config.cfg"), true);
-
-            // You can now create configuration wrappers for it
-            var userName = customFile.Bind("General",
-                "UserName",
-                "Deuce",
-                "Name of the user");
-
-            // In plug-ins, you can still access the default configuration file
-            var configGreeting = Config.Bind("General",
-                "GreetingTest",
-                "Hello, world!",
-                "A greeting text to show when the game is launched");
         }
     }
 }
