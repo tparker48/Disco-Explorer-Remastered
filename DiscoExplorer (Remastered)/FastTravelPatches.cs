@@ -7,7 +7,8 @@ namespace DiscoExplorer
         static bool SaveCoR(string fileNamePrefix)
         {
             fileNamePrefix = SunshinePersistenceFileManager.ReplaceInvalidFileNameChars(fileNamePrefix);
-            fileNamePrefix = SunshinePersistenceFileManager.PutDateSuffixOnPath(fileNamePrefix);
+            Il2CppSystem.DateTime date;
+            fileNamePrefix = SunshinePersistenceFileManager.PutDateSuffixOnPath(fileNamePrefix, out date);
 
             FastTravel.Save(fileNamePrefix);
             return true;

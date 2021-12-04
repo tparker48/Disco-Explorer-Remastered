@@ -63,6 +63,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\InControl.dll</HintPath>
     </Reference>
+    <Reference Include="MasterAudio, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\MasterAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\core\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -114,6 +118,9 @@
     </Reference>
     <Reference Include="UnityEngine.UIModule">
       <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\unhollowed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UniverseLib.IL2CPP">
+      <HintPath>E:\SteamLibrary\steamapps\common\Disco Elysium\BepInEx\plugins\UniverseLib.IL2CPP.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -29,9 +29,12 @@ namespace DiscoExplorer
         [HarmonyPostfix]
         public static void Update()
         {
+            BorderDebugDrawer.Singleton.enabled = true;
+
             // X
             if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.X) && Event.current.type == EventType.KeyDown)
             {
+                // BepInExLoader.log.LogMessage("[DiscoExplorer] X Pressed");
                 toggle = !toggle;
 
                 if (Sunshine.Views.ViewController.Current != Sunshine.Views.ViewType.INVENTORY)
@@ -59,6 +62,7 @@ namespace DiscoExplorer
         [HarmonyPostfix]
         public static void OnGUI()
         {
+            // BepInExLoader.log.LogMessage("[DiscoExplorer] OnGUI");
             if (toggle)
             {
                 DrawGUI.Draw();
