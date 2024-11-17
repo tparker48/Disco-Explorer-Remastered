@@ -1,16 +1,18 @@
-﻿using BepInEx;
-using UnhollowerRuntimeLib;
+﻿using System;
+using BepInEx;
+using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace DiscoExplorer
 {
     [BepInPlugin(GUID, MODNAME, VERSION)]
-    public class BepInExLoader : BepInEx.IL2CPP.BasePlugin
+    public class BepInExLoader : BasePlugin
     {
         public const string
-            MODNAME = "DiscoExplorer",
+            MODNAME = "DiscoExplorerRemastered",
             AUTHOR = "tparker48",
             GUID = "com." + AUTHOR + "." + MODNAME,
             VERSION = "1.0.0.0";
@@ -35,9 +37,10 @@ namespace DiscoExplorer
                 go.AddComponent<DiscoExplorerComponent>();
                 Object.DontDestroyOnLoad(go);
             }
-            catch
+            catch (Exception e)
             {
                 log.LogError("[DiscoExplorer] FAILED to Register Il2Cpp Type: DiscoExplorerComponent!");
+                log.LogError(e.ToString());
             }
 
             try
@@ -69,9 +72,10 @@ namespace DiscoExplorer
 
                 log.LogMessage("[DiscoExplorer] Applied All Patches");
             }
-            catch
+            catch (Exception e)
             {
                 log.LogError("[DiscoExplorer] FAILED to Apply Patches!");
+                log.LogError(e.ToString());
             }
         }
     }

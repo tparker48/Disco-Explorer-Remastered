@@ -42,41 +42,38 @@ namespace DiscoExplorer
 
             GUILayout.Label("Disco Explorer", NoOptions());
 
-            GUILayout.BeginHorizontal(WidthHeight(550,200));
-            GUILayout.BeginVertical(WidthHeight(200,200));
+            GUILayout.BeginHorizontal(WidthHeight(550, 200));
+            GUILayout.BeginVertical(WidthHeight(200, 200));
 
             GUILayout.Label("\n--- GENERAL ---", NoOptions());
 
-            // run speed
+            // Run Speed
             GUILayout.Label("Run Speed Multiplier\n[1.0 - 3.0]", NoOptions());
             runSpeed = GUILayout.TextField(runSpeed, 10, WidthHeight(100, 22));
             if (GUILayout.Button("Apply", Width(100)))
             {
-                // set speed 
                 if (float.TryParse(runSpeed, out var s))
                 {
                     RunSpeed.SetRunSpeed(s);
                 }
             }
 
-            // skill points
+            // Skill Points
             GUILayout.Label("\nSkill Points\n[0 - 100]", NoOptions());
             skillPoints = GUILayout.TextField(skillPoints, 10, WidthHeight(100, 22));
             if (GUILayout.Button("Apply", Width(100)))
             {
-                // set speed 
                 if (int.TryParse(skillPoints, out var s))
                 {
                     Utilities.SetSkillPoints(s);
                 }
             }
 
-            // money
+            // Money
             GUILayout.Label("\nMoney\n[0 - 999]", NoOptions());
             money = GUILayout.TextField(money, 10, WidthHeight(100, 22));
             if (GUILayout.Button("Apply", Width(100)))
             {
-                // set speed 
                 if (int.TryParse(money, out var s))
                 {
                     Utilities.SetMoney(s);
@@ -85,29 +82,28 @@ namespace DiscoExplorer
 
             GUILayout.EndVertical();
 
-
-            // attributes
+            // Attributes
             GUILayout.BeginVertical(WidthHeight(200, 200));
 
             GUILayout.Label("\n--- ATTRIBUTES ---", NoOptions());
 
-            // intellect
+            // Intellect
             GUILayout.Label("Intellect", NoOptions());
             intellect = GUILayout.TextField(intellect, 10, WidthHeight(100, 22));
 
-            // psyche
+            // Psyche
             GUILayout.Label("Psyche", NoOptions());
             psyche = GUILayout.TextField(psyche, 10, WidthHeight(100, 22));
 
-            // physique
+            // Physique
             GUILayout.Label("Physique", NoOptions());
             physique = GUILayout.TextField(physique, 10, WidthHeight(100, 22));
 
-            // motorics
+            // Motorics
             GUILayout.Label("Motorics", NoOptions());
             motorics = GUILayout.TextField(motorics, 10, WidthHeight(100, 22));
 
-            // apply attributes
+            // Apply Attributes
             if (GUILayout.Button("Apply", Width(100)))
             {
                 if (int.TryParse(intellect, out var i))
@@ -129,11 +125,11 @@ namespace DiscoExplorer
             }
             GUILayout.EndVertical();
 
-            // Fast travel
+            // Fast Travel
             GUILayout.BeginVertical(WidthHeight(200, 200));
             GUILayout.Label("\n--- FAST TRAVEL ---", NoOptions());
 
-            // whirling
+            // Whirling
             if (GUILayout.Button((FastTravel.CheckVisited(FastTravel.whirling) ? "Whirling-In-Rags" : "Undiscovered"), Width(150)))
             {
                 if (FastTravel.CheckVisited(FastTravel.whirling))
@@ -145,7 +141,7 @@ namespace DiscoExplorer
 
             GUILayout.Label("", NoOptions());
 
-            // claire's office
+            // Claire's Office
             if (GUILayout.Button((FastTravel.CheckVisited(FastTravel.union) ? "Evrart Claire's Office" : "Undiscovered"), Width(150)))
             {
                 if (FastTravel.CheckVisited(FastTravel.union))
@@ -157,7 +153,7 @@ namespace DiscoExplorer
 
             GUILayout.Label("", NoOptions());
 
-            // pier
+            // Pier
             if (GUILayout.Button((FastTravel.CheckVisited(FastTravel.pier) ? "Pier Apartments" : "Undiscovered"), Width(150)))
             {
                 if (FastTravel.CheckVisited(FastTravel.pier))
@@ -169,7 +165,7 @@ namespace DiscoExplorer
 
             GUILayout.Label("", NoOptions());
 
-            // shack
+            // Shack
             if (GUILayout.Button((FastTravel.CheckVisited(FastTravel.shack) ? "Shack on the coast" : "Undiscovered"), Width(150)))
             {
                 if (FastTravel.CheckVisited(FastTravel.shack))
@@ -181,7 +177,6 @@ namespace DiscoExplorer
 
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
-
 
             GUILayout.Label("\n--- TOGGLES ---", NoOptions());
             GUILayout.BeginHorizontal(WidthHeight(400, 50));
@@ -221,12 +216,11 @@ namespace DiscoExplorer
             if (GUILayout.Button("Add All Clothes", Width(200)))
             {
                 Utilities.AddAllClothes();
-
             }
 
             GUILayout.Label(" ", NoOptions());
 
-            // toggle appearance lock
+            // Toggle Appearance Lock
             if (GUILayout.Button("Lock Appearance: " + (FreezeClothing.on ? "ON" : "OFF"), Width(200)))
             {
                 FreezeClothing.on = !FreezeClothing.on;
@@ -246,32 +240,32 @@ namespace DiscoExplorer
 
             for (int i = 0; i < darkness; i++)
             {
-                GUI.Box(boxPos, new GUIContent());
+                GUI.Box(boxPos, GUIContent.none);
             }
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> Width(int w)
+        private static GUILayoutOption[] Width(int w)
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(1) { [0] = GUILayout.Width(w) };
+            return new GUILayoutOption[] { GUILayout.Width(w) };
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> Height(int h)
+        private static GUILayoutOption[] Height(int h)
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(1) { [0] = GUILayout.Height(h) };
+            return new GUILayoutOption[] { GUILayout.Height(h) };
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> WidthHeight(int w, int h)
+        private static GUILayoutOption[] WidthHeight(int w, int h)
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(2) { [0] = GUILayout.Width(w), [1] = GUILayout.Height(h) };
+            return new GUILayoutOption[]
+            {
+                GUILayout.Width(w),
+                GUILayout.Height(h)
+            };
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> NoOptions()
+        private static GUILayoutOption[] NoOptions()
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(0);
+            return new GUILayoutOption[0];
         }
-    }
-
-    public class test : MonoBehaviour
-    { 
     }
 }
