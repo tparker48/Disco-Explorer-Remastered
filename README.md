@@ -14,3 +14,5 @@ An updated version of Disco Explorer for Disco Elysium - The Final Cut
 
 ## Changes
 As of now, no changes to the original mod are planned. This update will simply get it working for the new game.
+
+Fixed to work with latest Steam version by github.com/okiyama 11/17/2024

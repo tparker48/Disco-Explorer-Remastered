@@ -1,7 +1,11 @@
 ﻿using System;
+using BepInEx;
+using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
-using Input = BepInEx.IL2CPP.UnityEngine.Input;
+using Input = BepInEx.Unity.IL2CPP.UnityEngine.Input;
+using KeyCode = BepInEx.Unity.IL2CPP.UnityEngine.KeyCode;
 
 namespace DiscoExplorer
 {
@@ -31,22 +35,21 @@ namespace DiscoExplorer
         {
             BorderDebugDrawer.Singleton.enabled = true;
 
-            // X
-            if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.X) && Event.current.type == EventType.KeyDown)
+            // X key to toggle the GUI
+            if (Input.GetKeyInt(KeyCode.X) && Event.current.type == EventType.KeyDown)
             {
-                // BepInExLoader.log.LogMessage("[DiscoExplorer] X Pressed");
                 toggle = !toggle;
 
                 if (Sunshine.Views.ViewController.Current != Sunshine.Views.ViewType.INVENTORY)
-                { 
+                {
                     Sunshine.Views.ViewController.ToggleView(Sunshine.Views.ViewType.INVENTORY, false);
                 }
 
                 Event.current.Use();
             }
 
-            // Esc
-            if (toggle && (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.Escape) && Event.current.type == EventType.KeyDown))
+            // Escape key to close the GUI
+            if (toggle && (Input.GetKeyInt(KeyCode.Escape) && Event.current.type == EventType.KeyDown))
             {
                 toggle = false;
 
@@ -62,11 +65,10 @@ namespace DiscoExplorer
         [HarmonyPostfix]
         public static void OnGUI()
         {
-            // BepInExLoader.log.LogMessage("[DiscoExplorer] OnGUI");
             if (toggle)
             {
                 DrawGUI.Draw();
             }
         }
-    } 
+    }
 }
