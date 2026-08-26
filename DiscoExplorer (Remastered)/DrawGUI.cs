@@ -250,24 +250,24 @@ namespace DiscoExplorer
             }
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> Width(int w)
+        private static Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption> Width(int w)
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(1) { [0] = GUILayout.Width(w) };
+            return new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption>(1) { [0] = GUILayout.Width(w) };
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> Height(int h)
+        private static Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption> Height(int h)
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(1) { [0] = GUILayout.Height(h) };
+            return new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption>(1) { [0] = GUILayout.Height(h) };
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> WidthHeight(int w, int h)
+        private static Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption> WidthHeight(int w, int h)
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(2) { [0] = GUILayout.Width(w), [1] = GUILayout.Height(h) };
+            return new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption>(2) { [0] = GUILayout.Width(w), [1] = GUILayout.Height(h) };
         }
 
-        private static UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption> NoOptions()
+        private static Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption> NoOptions()
         {
-            return new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(0);
+            return new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption>(0);
         }
     }
 

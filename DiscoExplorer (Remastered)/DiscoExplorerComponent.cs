@@ -1,7 +1,7 @@
 ﻿using System;
 using HarmonyLib;
 using UnityEngine;
-using Input = BepInEx.IL2CPP.UnityEngine.Input;
+using Input = BepInEx.Unity.IL2CPP.UnityEngine.Input;
 
 namespace DiscoExplorer
 {
@@ -32,7 +32,7 @@ namespace DiscoExplorer
             BorderDebugDrawer.Singleton.enabled = true;
 
             // X
-            if (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.X) && Event.current.type == EventType.KeyDown)
+            if (Input.GetKeyInt(BepInEx.Unity.IL2CPP.UnityEngine.KeyCode.X) && Event.current.type == EventType.KeyDown)
             {
                 // BepInExLoader.log.LogMessage("[DiscoExplorer] X Pressed");
                 toggle = !toggle;
@@ -46,7 +46,7 @@ namespace DiscoExplorer
             }
 
             // Esc
-            if (toggle && (Input.GetKeyInt(BepInEx.IL2CPP.UnityEngine.KeyCode.Escape) && Event.current.type == EventType.KeyDown))
+            if (toggle && (Input.GetKeyInt(BepInEx.Unity.IL2CPP.UnityEngine.KeyCode.Escape) && Event.current.type == EventType.KeyDown))
             {
                 toggle = false;
 

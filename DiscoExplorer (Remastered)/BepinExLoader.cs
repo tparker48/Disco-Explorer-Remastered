@@ -1,5 +1,5 @@
 ﻿using BepInEx;
-using UnhollowerRuntimeLib;
+using Il2CppInterop.Runtime.Injection;
 using HarmonyLib;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 namespace DiscoExplorer
 {
     [BepInPlugin(GUID, MODNAME, VERSION)]
-    public class BepInExLoader : BepInEx.IL2CPP.BasePlugin
+    public class BepInExLoader : BepInEx.Unity.IL2CPP.BasePlugin
     {
         public const string
             MODNAME = "DiscoExplorer",
